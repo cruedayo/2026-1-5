@@ -1,74 +1,354 @@
-<style>
-    * {
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-        margin: 0;
-        padding: 0;
-        color: black;
-        font-family: sans-serif;
-        text-align: center;
-    }
+    <title>성광고등학교 교내 식물의 이산화탄소 흡수량 탐구</title>
 
-    /* 화면을 세로로 4등분하는 배경 */
-    .background-grid {
-        position: fixed;
-        inset: 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .panel {
-        min-width: 0;
-        height: 100%;
-    }
-
-    /* 첫 번째 칸: 향나무 사진 */
-    .tree-left {
-        background-image: url("향나무.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    /* 가운데 두 칸: 연두색 */
-    .green-left,
-    .green-right {
-        background-color: #c8f0a5;
-    }
-
-    /* 네 번째 칸: 눈향나무 사진 */
-    .tree-right {
-        background-image: url("눈향나무.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    /* 본문을 가운데에 배치 */
-    .content {
-        position: relative;
-        z-index: 1;
-        width: 50vw;
-        margin: 0 auto;
-        padding: 30px 20px;
-        line-height: 1.7;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* 모바일 화면 대응 */
-    @media (max-width: 700px) {
-        .content {
-            width: 100%;
-            padding: 20px;
-            background-color: rgba(220, 255, 205, 0.92);
+    <style>
+        * {
+            box-sizing: border-box;
         }
-    }
-</style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* 화면을 세로로 4등분하는 배경 */
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .panel {
+            min-width: 0;
+            height: 100%;
+        }
+
+        /* 첫 번째 칸: 향나무 사진 */
+        .tree-left {
+            background-image: url("향나무.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 가운데 두 칸: 연두색 */
+        .green-left,
+        .green-right {
+            background-color: #c8f0a5;
+        }
+
+        /* 네 번째 칸: 눈향나무 사진 */
+        .tree-right {
+            background-image: url("눈향나무.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 웹사이트의 주요 내용 */
+        .content {
+            position: relative;
+            z-index: 1;
+            width: 50vw;
+            margin: 0 auto;
+            padding: 30px 20px;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 작은 화면에서 가독성 유지 */
+        @media (max-width: 700px) {
+            .content {
+                width: 100%;
+                padding: 20px;
+                background-color: rgba(220, 255, 205, 0.92);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 화면 전체를 4개로 나누는 배경 -->
+    <div class="background-grid" aria-hidden="true">
+        <div class="panel tree-left"></div>
+        <div class="panel green-left"></div>
+        <div class="panel green-right"></div>
+        <div class="panel tree-right"></div>
+    </div>
+
+    <main class="content">
+
+        <h1>성광고등학교 교내 식물의 이산화탄소 흡수량 탐구</h1>
+
+        <p>
+            가이즈까 향나무, 눈향나무, 회양목 등 학교에서 볼 수 있는 식물들은
+            이산화탄소를 얼마나 흡수할까?
+        </p>
+
+        <p>
+            이번 탐구에서는 교내 식물의 특징과 이산화탄소 흡수량을 알아보았다.
+            또한 자동차의 연간 이산화탄소 배출량과 비교하여
+            식물의 탄소 흡수 기능이 환경에 어떤 의미를 가지는지 살펴보았다.
+        </p>
+
+        <h2>학교 내의 여러 식물들</h2>
+
+        <!-- 1. 가이즈까 향나무 -->
+        <img src="향나무.jpg" alt="가이즈까 향나무">
+
+        <h3>1. 가이즈까 향나무</h3>
+
+        <h4>기본 정보</h4>
+        <p>
+            학명: Juniperus chinensis 'Kaizuka'<br>
+            분류: 측백나무과 향나무속<br>
+            원산: 동아시아 지역의 향나무를 바탕으로 한 원예 품종<br>
+            형태: 상록 침엽수<br>
+            주요 용도: 정원수, 공원수, 조경수
+        </p>
+
+        <h4>식물의 특징</h4>
+        <p>
+            가이즈까 향나무는 가지가 나선형으로 비틀리며 자라
+            독특한 모양을 만드는 것이 특징이다.
+            잎은 비늘 모양이 주로 나타나며 사계절 푸른색을 유지한다.
+            햇빛을 좋아하고 추위와 대기오염에 비교적 강해
+            공원과 정원의 조경수로 이용된다.
+            꽃은 작아 눈에 잘 띄지 않으며, 봄철인 4월경에 핀다.
+        </p>
+
+        <h4>가이즈까 향나무의 이산화탄소 흡수량</h4>
+
+        <p>
+            자료에 제시된 탄소 격리량 1.2lb를
+            1년 동안 격리한 탄소량이라고 가정했다.<br>
+            <strong>
+                1.2 × 0.453592 × (44/12)
+                ≈ 2.0kg CO₂/년
+            </strong><br>
+            따라서 가이즈까 향나무 한 그루의 연간
+            이산화탄소 흡수량은 약 2.0kg으로 추정된다.
+        </p>
+
+        <p>
+            ※ 실제 흡수량은 나무의 크기와 생육 환경에 따라 달라질 수 있다.
+            이 값은 자료의 탄소 격리량을 연간 수치로 가정한 추정치이다.
+        </p>
+
+        <h4>자동차의 연간 이산화탄소 배출량</h4>
+
+        <p>
+            자동차가 연간 약 15,000km를 주행하고
+            1km당 162g의 이산화탄소를 배출한다고 가정했다.<br>
+            <strong>
+                15,000 × 162 ÷ 1,000
+                = 2,430kg CO₂/년
+            </strong><br>
+            따라서 자동차 한 대의 연간 배출량은 약 2.43t CO₂이다.
+        </p>
+
+        <h4>가이즈까 향나무와 자동차의 비교</h4>
+
+        <p>
+            자동차 한 대의 연간 배출량을
+            가이즈까 향나무 한 그루의 추정 흡수량으로 나누었다.<br>
+            <strong>2,430 ÷ 1.996 ≈ 1,217</strong>
+        </p>
+
+        <p>
+            즉, 자동차 한 대가 1년 동안 배출하는 이산화탄소의 양은
+            가이즈까 향나무 약 1,200그루가
+            1년 동안 흡수하는 양에 해당한다.
+        </p>
+
+        <p>
+            이를 통해 자동차에서 배출되는 이산화탄소의 양이 상당하며,
+            식물의 탄소 흡수 기능을 이해하는 것이
+            환경 문제를 살펴보는 데 도움이 된다는 점을 알 수 있다.
+        </p>
+
+        <!-- 2. 눈향나무 -->
+        <img src="눈향나무.jpg" alt="눈향나무">
+
+        <h3>2. 눈향나무</h3>
+
+        <h4>기본 정보</h4>
+        <p>
+            학명: Juniperus chinensis var. sargentii<br>
+            분류: 측백나무과 향나무속<br>
+            형태: 상록 침엽 관목<br>
+            생육 환경: 햇빛이 잘 들고 배수가 양호한 곳<br>
+            주요 용도: 정원, 암석원, 지피식재 및 조경용
+        </p>
+
+        <h4>식물의 특징</h4>
+        <p>
+            눈향나무는 줄기가 땅을 따라 낮게 퍼지며 자라는 것이 특징이다.
+            잎은 짙은 녹색의 비늘 모양이 대부분이며
+            바늘 모양 잎이 나타나기도 한다.
+            추위에 강하고 땅을 덮듯 자라 정원이나 비탈면을 꾸미는 데 이용된다.
+            꽃은 봄철인 4~5월경 피고, 열매는 검푸른색으로 익는다.
+        </p>
+
+        <h4>눈향나무 군락의 이산화탄소 흡수량</h4>
+
+        <p>
+            한라산 아고산대 눈향나무 군락의 자료를 이용했다.
+            이 자료는 개별 나무 한 그루가 아닌,
+            일정 면적의 군락을 기준으로 한다.
+        </p>
+
+        <p>
+            2014년 흡수량: 2.02t CO₂/ha/년<br>
+            2015년 흡수량: 3.52t CO₂/ha/년
+        </p>
+
+        <p>
+            같은 자료에는 2014년 -5.02t CO₂/ha/년,
+            2015년 -4.58t CO₂/ha/년이라는 음수 값도 제시되어 있다.
+            음수의 의미는 자료에서 사용한 지표와 부호 기준을 확인해야 하므로,
+            여기서는 흡수량으로 제시된 값만 비교했다.
+        </p>
+
+        <h4>눈향나무 군락과 자동차의 연간 배출량 비교</h4>
+
+        <p>
+            자동차 한 대의 연간 배출량인 약 2.43t CO₂를 기준으로 비교했다.<br>
+            2014년: <strong>2.02 ÷ 2.43 ≈ 0.83대</strong><br>
+            2015년: <strong>3.52 ÷ 2.43 ≈ 1.45대</strong>
+        </p>
+
+        <p>
+            즉, 눈향나무 군락 1ha의 연간 흡수량은
+            2014년에는 자동차 약 0.83대,
+            2015년에는 약 1.45대의 연간 배출량에 해당한다.
+        </p>
+
+        <h4>비교를 통해 알 수 있는 점</h4>
+
+        <p>
+            눈향나무 군락의 연간 이산화탄소 흡수량은
+            조사 연도에 따라 차이가 나타났다.
+            이러한 차이는 조사 연도와 군락의 생육 환경 등
+            여러 요인과 관련이 있을 수 있다.
+            다만 두 해의 자료만으로 정확한 원인을 단정하기는 어렵다.
+        </p>
+
+        <!-- 3. 회양목 -->
+        <img src="회양목.jpg" alt="회양목">
+
+        <h3>3. 회양목</h3>
+
+        <h4>기본 정보</h4>
+        <p>
+            학명: Buxus sinica var. insularis (Nakai) M.Cheng<br>
+            분류: 회양목과 회양목속<br>
+            형태: 상록 활엽 관목<br>
+            생육 환경: 주로 석회암 지대에서 자란다.<br>
+            주요 용도: 정원수, 생울타리, 학교 화단 및 조경용
+        </p>
+
+        <h4>식물의 특징</h4>
+        <p>
+            회양목은 작고 두꺼운 타원형 잎을 가지며
+            잎 표면에 윤기가 난다.
+            가지와 잎이 촘촘하게 자라고 가지치기에 잘 견뎌
+            생울타리나 화단 경계에 많이 이용된다.
+            꽃은 이른 봄인 3~4월경 연한 노란색의 작은 꽃으로 핀다.
+            열매는 삭과이며 대체로 9~10월경 갈색으로 익는다.
+        </p>
+
+        <h4>회양목의 이산화탄소 흡수량</h4>
+
+        <p>
+            2022년 연구에서 산정한 회양목 한 개체의
+            연평균 이산화탄소 흡수량은 112.08g이다.<br>
+            <strong>
+                112.08 ÷ 1,000
+                = 약 0.112kg CO₂/년
+            </strong>
+        </p>
+
+        <p>
+            ※ 이 값은 연구에서 산정한 평균치이며,
+            실제 흡수량은 회양목의 크기와 생육 환경,
+            관리 상태 등에 따라 달라질 수 있다.
+        </p>
+
+        <h4>회양목과 자동차의 비교</h4>
+
+        <p>
+            자동차 한 대의 연간 배출량인 약 2,430kg CO₂를 기준으로 비교했다.<br>
+            <strong>2,430 ÷ 0.11208 ≈ 21,681</strong>
+        </p>
+
+        <p>
+            즉, 자동차 한 대의 연간 배출량은
+            회양목 약 21,700개체의 연간 흡수량에 해당한다.
+            실제 흡수량은 식물의 크기와 생육 환경 등에 따라 달라질 수 있다.
+        </p>
+
+        <p>
+            자료 출처:<br>
+            김학구 외(2022),
+            「도시숲 및 정원 주요 관목의 탄소흡수계수 개발 및
+            탄소저장량과 흡수량 비교」,
+            한국산림휴양학회지, 26(4), 131-139.<br>
+            <a href="https://doi.org/10.34272/forest.2022.26.4.011"
+               target="_blank"
+               rel="noopener noreferrer">논문 보기</a>
+        </p>
+
+        <h2>종합적인 결론</h2>
+
+        <p>
+            이번 탐구에서는 가이즈까 향나무, 눈향나무 군락, 회양목의
+            이산화탄소 흡수량을 자동차의 연간 배출량과 비교하였다.
+            가이즈까 향나무는 연간 약 2.0kg CO₂,
+            회양목은 한 개체당 약 0.112kg CO₂의 흡수량으로 나타났다.
+        </p>
+
+        <p>
+            눈향나무 군락은 조사 자료에 따라
+            1ha당 연간 2.02t 또는 3.52t의 이산화탄소를 흡수한 것으로 나타났다.
+            이를 자동차의 연간 배출량과 비교하면
+            식물의 이산화탄소 흡수량을 구체적인 규모로 이해할 수 있다.
+        </p>
+
+        <p>
+            다만 가이즈까 향나무는 탄소 격리량을 연간 기준으로 가정한 추정치이고,
+            눈향나무는 일정 면적의 군락을 기준으로 하며,
+            회양목은 관목 한 개체의 연구 평균값을 이용하였다.
+            따라서 식물마다 측정 기준이 다르며,
+            실제 흡수량도 식물의 종류와 크기, 생육 환경,
+            관리 상태 및 측정 방법에 따라 달라질 수 있다.
+        </p>
+
+        <p>
+            이번 탐구를 통해 교내에서 볼 수 있는 식물들이
+            이산화탄소를 흡수하는 역할을 한다는 점을 살펴보았다.
+            또한 식물의 환경적 기능을 평가할 때는
+            식물의 특징뿐만 아니라 흡수량 자료의 측정 기준도
+            함께 고려해야 한다는 점을 알 수 있었다.
+        </p>
+
+    </main>
+
+</body>
+</html>
