@@ -1,213 +1,74 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>성광고등학교 교내 식물의 이산화탄소 흡수량 탐구</title>
-</head>
-<body>
-    <h1>성광고등학교 교내 식물의 이산화탄소 흡수량 탐구</h1>
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-    <p>
-        가이즈까 향나무, 눈향나무, 회양목은 학교에서 관찰할 수 있는 조경 식물이다.
-        각 식물의 특징과 개화 시기를 알아보고, 자료에 제시된 연간 이산화탄소 흡수량을
-        자동차의 연간 배출량과 비교했다.
-    </p>
+    body {
+        margin: 0;
+        padding: 0;
+        color: black;
+        font-family: sans-serif;
+        text-align: center;
+    }
 
-    <h2>1. 가이즈까 향나무</h2>
-    <img src="향나무.jpg" alt="가이즈까 향나무">
+    /* 화면을 세로로 4등분하는 배경 */
+    .background-grid {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        z-index: 0;
+        pointer-events: none;
+    }
 
-    <h3>기본 정보</h3>
-    <p>
-        학명: Juniperus chinensis 'Kaizuka'<br>
-        분류: 측백나무과 향나무속<br>
-        형태: 상록 침엽 교목<br>
-        주요 용도: 정원수, 공원수, 울타리와 조경용
-    </p>
+    .panel {
+        min-width: 0;
+        height: 100%;
+    }
 
-    <h3>식물의 특징과 꽃 피는 시기</h3>
-    <p>
-        가이즈까 향나무는 가지가 나선형으로 비틀리듯 자라는 것이 특징이다.
-        잎은 나무의 나이와 가지에 따라 비늘잎 형태가 두드러지며,
-        잎과 가지가 촘촘해 조경수로 많이 이용된다.
-        햇빛을 좋아하고 추위와 대기오염에도 비교적 강한 편이다.<br>
-        꽃은 봄철인 <strong>4월</strong>에 핀다.
-        향나무류는 눈에 잘 띄는 꽃잎 대신 작은 생식 구조가 생기며,
-        열매처럼 보이는 구과는 대체로 가을에 익는다.
-    </p>
+    /* 첫 번째 칸: 향나무 사진 */
+    .tree-left {
+        background-image: url("향나무.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 
-    <h3>연간 이산화탄소 흡수량</h3>
-    <p>
-        참고 자료의 탄소 격리량 1.2lb를 1년 동안 격리한 탄소량이라고 가정해 계산했다.<br>
-        <strong>1.2lb × 0.4536 × 44/12 ≈ 2.0kg CO₂/년</strong><br>
-        따라서 가이즈까 향나무 한 그루의 연간 이산화탄소 흡수량은
-        약 2.0kg으로 추정된다.
-        이 값은 연간 수치라는 가정을 바탕으로 한 추정값이다.
-    </p>
+    /* 가운데 두 칸: 연두색 */
+    .green-left,
+    .green-right {
+        background-color: #c8f0a5;
+    }
 
-    <h3>자동차와의 연간 배출량 비교</h3>
-    <p>
-        자동차가 연간 15,000km를 주행하고
-        1km당 162g의 이산화탄소를 배출한다고 가정했다.<br>
-        <strong>15,000km × 162g/km = 2,430kg CO₂/년</strong><br>
-        자동차 한 대의 연간 배출량을 가이즈까 향나무 한 그루의
-        추정 흡수량으로 나누면 다음과 같다.<br>
-        <strong>2,430 ÷ 1.996 ≈ 1,217</strong><br>
-        즉, 자동차 한 대가 1년 동안 배출하는 양은
-        가이즈까 향나무 약 1,200그루의 연간 흡수량에 해당한다.
-    </p>
+    /* 네 번째 칸: 눈향나무 사진 */
+    .tree-right {
+        background-image: url("눈향나무.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 
-    <hr>
+    /* 본문을 가운데에 배치 */
+    .content {
+        position: relative;
+        z-index: 1;
+        width: 50vw;
+        margin: 0 auto;
+        padding: 30px 20px;
+        line-height: 1.7;
+    }
 
-    <h2>2. 눈향나무</h2>
-    <img src="눈향나무.jpg" alt="눈향나무">
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
-    <h3>기본 정보</h3>
-    <p>
-        학명: Juniperus chinensis var. sargentii<br>
-        분류: 측백나무과 향나무속<br>
-        형태: 상록 침엽 관목<br>
-        주요 용도: 정원, 암석원, 지피식재 및 조경용
-    </p>
-
-    <h3>식물의 특징과 꽃 피는 시기</h3>
-    <p>
-        눈향나무는 줄기가 땅을 따라 낮게 퍼지며 자라는 식물이다.
-        잎은 주로 짙은 녹색의 비늘잎이고,
-        어린 가지에는 부드러운 바늘잎이 섞여 나타나기도 한다.
-        추위에 강하고 햇빛이 잘 들며 물이 잘 빠지는 곳에서 잘 자란다.
-        땅을 덮듯 자라는 특징 때문에 정원이나 비탈면의 조경에 활용된다.<br>
-        꽃은 봄철인 <strong>4~5월</strong>에 핀다.
-        열매는 대체로 가을인 9~10월 무렵 검푸른색으로 익는다.
-    </p>
-
-    <h3>연간 이산화탄소 흡수량</h3>
-    <p>
-        한라산 아고산대 눈향나무 군락 자료에서는 다음과 같은
-        연간 흡수량이 제시되었다.
-        이 수치는 한 그루가 아니라 <strong>군락 1ha(헥타르) 기준</strong>이다.<br>
-        2014년: <strong>2.02t CO₂/ha/년</strong><br>
-        2015년: <strong>3.52t CO₂/ha/년</strong><br>
-        같은 자료에 음수 값도 제시되어 있으나,
-        지표의 부호 기준을 확인해야 하므로
-        여기서는 흡수량으로 제시된 두 값만 비교했다.
-    </p>
-
-    <h3>자동차와의 연간 배출량 비교</h3>
-    <p>
-        자동차 한 대의 연간 배출량을 약 2.43t CO₂로 두고 비교했다.<br>
-        2014년: <strong>2.02 ÷ 2.43 ≈ 0.83대</strong><br>
-        2015년: <strong>3.52 ÷ 2.43 ≈ 1.45대</strong><br>
-        따라서 눈향나무 군락 1ha의 연간 흡수량은
-        2014년에는 자동차 약 0.83대,
-        2015년에는 약 1.45대의 연간 배출량에 해당한다.
-        조사 연도에 따라 값이 달랐지만,
-        두 해의 자료만으로 차이가 난 정확한 원인을 단정할 수는 없다.
-    </p>
-
-    <hr>
-
-    <h2>3. 회양목</h2>
-    <img src="회양목.jpg" alt="회양목">
-
-    <h3>기본 정보</h3>
-    <p>
-        학명: Buxus sinica var. insularis (Nakai) M.Cheng<br>
-        분류: 회양목과 회양목속<br>
-        형태: 상록 활엽 관목<br>
-        주요 용도: 정원수, 생울타리, 학교 화단 및 조경용
-    </p>
-
-    <h3>식물의 특징과 꽃 피는 시기</h3>
-    <p>
-        회양목은 작고 두꺼우며 윤기가 나는 타원형 잎을 가진다.
-        가지와 잎이 조밀하게 자라고 가지치기에도 잘 견디며,
-        성장이 비교적 느려 생울타리나 화단의 경계를 만드는 데 많이 쓰인다.
-        주로 석회암 지대에서 자라며 도시의 조경 공간에서도 볼 수 있다.<br>
-        꽃은 이른 봄인 <strong>3~4월</strong>에 연한 노란색으로 작게 모여 핀다.
-        열매는 대체로 9~10월에 갈색으로 익는다.
-    </p>
-
-    <h3>연간 이산화탄소 흡수량</h3>
-    <p>
-        2022년 연구에서는 회양목 한 개체의 연평균 이산화탄소 흡수량을
-        112.08g으로 산정했다.<br>
-        <strong>112.08g ÷ 1,000 = 약 0.112kg CO₂/년</strong>
-    </p>
-
-    <h3>자동차와의 연간 배출량 비교</h3>
-    <p>
-        자동차 한 대의 연간 배출량 약 2,430kg을
-        회양목 한 개체의 연간 흡수량으로 나누면 다음과 같다.<br>
-        <strong>2,430 ÷ 0.11208 ≈ 21,681</strong><br>
-        즉, 자동차 한 대의 연간 배출량은
-        회양목 약 21,700개체의 연간 흡수량에 해당한다.
-        실제 흡수량은 개체 크기와 생육 환경 등에 따라 달라질 수 있다.
-    </p>
-
-    <hr>
-
-    <h2>종합적인 결론</h2>
-    <p>
-        가이즈까 향나무는 자료의 탄소 격리량을 연간 수치로 가정했을 때
-        한 그루당 약 2.0kg CO₂/년으로 추정되었고,
-        회양목은 연구에서 한 개체당 약 0.112kg CO₂/년으로 산정되었다.
-        눈향나무는 한 그루가 아닌 군락 1ha를 기준으로
-        2014년 2.02t, 2015년 3.52t CO₂/년의 흡수량이 제시되었다.
-    </p>
-
-    <p>
-        자동차 한 대의 연간 이산화탄소 배출량은
-        여기서 설정한 조건에서 약 2,430kg이다.
-        비교 결과, 자동차의 연간 배출량은 가이즈까 향나무 약 1,200그루
-        또는 회양목 약 21,700개체의 연간 흡수량과 비슷한 규모로 나타났다.
-        다만 식물마다 측정 기준이 다르며,
-        실제 흡수량은 크기와 생육 환경, 관리 상태 및 측정 방법에 따라
-        달라질 수 있으므로 단순 비교는 규모를 이해하기 위한 추정치로 보아야 한다.
-    </p>
-
-    <h2>자료 출처</h2>
-    <ul>
-        <li>
-            조경수목협회,
-            <a href="https://klta.or.kr/m/tree_dic_read.php?no=0000002&page=1"
-               target="_blank" rel="noopener noreferrer">
-                가이즈까향나무 식물 정보
-            </a>
-        </li>
-        <li>
-            서울어린이대공원,
-            <a href="https://www.sisul.or.kr/open_content/childrenpark/bbs/bbsMsgDetail.do?bcd=plant&msg_seq=88&pgno=21"
-               target="_blank" rel="noopener noreferrer">
-                눈향나무 식물 정보
-            </a>
-        </li>
-        <li>
-            국립수목원 식물도감 정보를 바탕으로 한
-            <a href="https://wp.chanhoz.com/%ED%9A%8C%EC%96%91%EB%AA%A9"
-               target="_blank" rel="noopener noreferrer">
-                회양목 정보
-            </a>
-        </li>
-        <li>
-            김학구 외(2022),
-            「도시숲 및 정원 주요 관목의 탄소흡수계수 개발 및
-            탄소저장량과 흡수량 비교」,
-            한국산림휴양학회지, 26(4), 131-139.
-            <a href="https://doi.org/10.34272/forest.2022.26.4.011"
-               target="_blank" rel="noopener noreferrer">
-                논문 보기
-            </a>
-        </li>
-    </ul>
-
-    <p>
-        <strong>참고:</strong>
-        자동차 배출량은 연간 주행거리 15,000km와
-        1km당 162g CO₂ 배출을 가정해 계산한 값이다.
-        가이즈까 향나무의 흡수량도 자료에 제시된 1.2lb를
-        연간 탄소 격리량으로 가정해 추정했으므로,
-        두 값 모두 조건과 가정에 따라 달라질 수 있다.
-    </p>
-</body>
-</html>
+    /* 모바일 화면 대응 */
+    @media (max-width: 700px) {
+        .content {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(220, 255, 205, 0.92);
+        }
+    }
+</style>
