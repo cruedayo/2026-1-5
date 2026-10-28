@@ -1,4 +1,155 @@
-<h3>자동차의 연간 이산화탄소 배출량</h3>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>성광고등학교 2026/1-5반 학교사업</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* 화면을 세로로 4등분하는 배경 */
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* 각 칸의 기본 설정 */
+        .panel {
+            min-width: 0;
+            height: 100%;
+        }
+
+        /* 첫 번째 칸: 향나무 사진 */
+        .tree-left {
+            background-image: url("향나무.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 두 번째 칸: 연두색 */
+        .green-left {
+            background-color: #c8f0a5;
+        }
+
+        /* 세 번째 칸: 연두색 */
+        .green-right {
+            background-color: #c8f0a5;
+        }
+
+        /* 네 번째 칸: 눈향나무 사진 */
+        .tree-right {
+            background-image: url("눈향나무.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 기존 웹사이트의 내용 */
+        .content {
+            position: relative;
+            z-index: 1;
+            width: 50vw;
+            margin: 0 auto;
+            padding: 30px 20px;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 작은 화면에서도 내용을 읽기 쉽게 설정 */
+        @media (max-width: 700px) {
+            .content {
+                width: 100%;
+                padding: 20px;
+                background-color: rgba(220, 255, 205, 0.92);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 화면 전체에 고정되는 4개의 배경 칸 -->
+    <div class="background-grid" aria-hidden="true">
+        <div class="panel tree-left"></div>
+        <div class="panel green-left"></div>
+        <div class="panel green-right"></div>
+        <div class="panel tree-right"></div>
+    </div>
+
+    <!-- 기존 웹사이트 내용 -->
+    <main class="content">
+
+        <h1>성광고등학교의 여러 식물들</h1>
+
+        <p>
+            (가이즈까 향나무 · 눈향나무 · 영산홍 등)
+        </p>
+
+        <p>그 식물들은 얼마나 많은 이산화탄소를 흡수할까?</p>
+
+        <h2>학교 내의 여러 식물들</h2>
+
+        <img src="향나무.jpg" alt="가이즈까 향나무">
+
+        <h3>가이즈까 향나무</h3>
+
+        <p>
+            학명: Juniperus chinensis 'Kaizuka'<br>
+            분류: 측백나무과 향나무속<br>
+            원산: 중국 등 동아시아 지역의 향나무를 바탕으로 한 원예 품종<br>
+            형태: 상록 침엽수<br>
+            특징: 가지가 비틀리듯 자라며, 잎은 비늘 모양 또는 바늘 모양이다.<br>
+            생육 환경: 햇빛이 잘 들고 배수가 양호한 곳<br>
+            활용: 정원수, 공원수, 조경수
+        </p>
+
+        <h3>가이즈까 향나무의 이산화탄소 흡수량 (CO₂)</h3>
+
+        <p>
+            가이즈까 향나무의 총 탄소 격리량은 1.2lb라고 한다.<br>
+            이 수치를 이용해 연간 이산화탄소 흡수량을 환산하면 다음과 같다.
+        </p>
+
+        <p>
+            1.2 × 0.453592 = 0.5443kg C/년
+        </p>
+
+        <p>
+            CO₂의 분자량은 44, 탄소(C)의 원자량은 12이므로,<br>
+            탄소 질량을 CO₂ 질량으로 환산하기 위해 44/12를 곱한다.
+        </p>
+
+        <p>
+            0.5443 × (44/12) = 1.996kg CO₂/년
+        </p>
+
+        <p>
+            따라서 가이즈까 향나무 한 그루의 연간 CO₂ 흡수량은<br>
+            약 2.0kg CO₂/년으로 환산된다.
+        </p>
+
+            <h3>자동차의 연간 이산화탄소 배출량</h3>
 
 <p>
     자동차는 연간 약 15,000km를 주행하며,
@@ -47,3 +198,54 @@
     이를 통해 자동차의 연간 이산화탄소 배출량이 상당히 많으며,
     나무의 이산화탄소 흡수 기능이 환경 보호에 중요하다는 점을 알 수 있다.
 </p>
+
+        <img src="눈향나무.jpg" alt="눈향나무">
+
+        <h3>눈향나무</h3>
+
+        <p>
+            분류: 측백나무과 향나무속 상록 침엽수<br>
+            형태: 줄기가 땅을 따라 낮게 자라는 관목<br>
+            높이: 일반적으로 낮게 자라며, 품종과 생육 환경에 따라 차이가 있음<br>
+            잎: 바늘 모양 또는 비늘 모양의 잎<br>
+            열매: 구과로, 익으면 검푸른색을 띠는 편<br>
+            생육 환경: 햇빛이 잘 들고 배수가 양호한 곳<br>
+            주요 용도: 정원, 암석원, 지피식재 및 조경용
+        </p>
+
+        <h3>눈향나무의 이산화탄소 흡수량 - 한라산 아고산대 군락</h3>
+
+        <p>
+            2014년에는 이 군락에서 2.02t CO₂/ha/년만큼의
+            이산화탄소를 흡수하였고,<br>
+            -5.02t CO₂/ha/년만큼의 이산화탄소를 배출하였다.<br><br>
+
+            2015년에는 이 군락에서 3.52t CO₂/ha/년만큼의
+            이산화탄소를 흡수하였고,<br>
+            -4.58t CO₂/ha/년만큼의 이산화탄소를 배출하였다.
+        </p>
+
+        <img src="영산홍.jpg" alt="영산홍">
+
+        <h3>영산홍</h3>
+
+        <p>
+            분류: 진달래과 진달래속<br>
+            형태: 키가 작은 상록성 관목<br>
+            꽃: 주로 붉은색이나 분홍색이며, 봄에 개화<br>
+            잎: 작고 타원형이며, 겨울에도 일부 잎이 남음<br>
+            생육 환경: 햇빛이 잘 들고 배수가 양호한 곳<br>
+            주요 용도: 학교 화단, 공원, 정원 등의 조경 및 관상용
+        </p>
+
+        <h3>영산홍의 연간 이산화탄소 흡수량</h3>
+
+        <p>
+            영산홍의 개체당 연간 이산화탄소 흡수량은
+            직접적으로 보고되지 않았다.
+        </p>
+
+    </main>
+
+</body>
+</html>
